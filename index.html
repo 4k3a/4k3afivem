@@ -1,76 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بلغلط</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: url('https://media.discordapp.net/attachments/1315010612874575892/1378817148713173123/1100de78c5fe97eae781463753047e0b.jpg?ex=683dfb09&is=683ca989&hm=782b778532070147013df113060ea5ba91a0f173fcf28fbd09a4745e2358a47d&=&format=webp') no-repeat center center fixed;
-            background-size: cover;
-            font-family: 'Courier New', Courier, monospace;
-            color: #0000ff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-            text-align: center;
-        }
-        .image-container img {
-            width: 750px; 
-            height: auto;
-            border: 2px solid #ffffff; 
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 0, 255, 0.7); 
-        }
-        .info {
-            margin-top: 20px;
-            font-size: 1.5em;
-            color: #ffffff; 
-            text-shadow: 0px 0px 8px #0000ff, 0px 0px 15px #0000ff, 0px 0px 25px #0000ff; 
-            letter-spacing: 4.5px; 
-            white-space: pre-wrap;
-        }
-        .text {
-            margin-top: 20px;
-            font-size: 3em; 
-            color: #ffffff; 
-            text-shadow: 0px 0px 8px #0000ff, 0px 0px 15px #0000ff, 0px 0px 25px #0000ff; 
-            letter-spacing: 4.5px; 
-        }
-    </style>
-</head>
-<body>
-    <div class="image-container">
-        <img src="" alt="">
-    </div>
-    <audio autoplay loop>
-        <source src="https://youtu.be/KTlteit7pyw?si=SlEzGSwyge3pXw-7&t=39" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <div class="info" id="ip-info">
-        <strong>IP: <span id="ip"></span></strong><br>
-        <span><strong>City:</strong> <span id="city"></span></span><br>
-        <span><strong>Region:</strong> <span id="region"></span></span><br>
-        <span><strong>Country:</strong> <span id="country"></span></span><br>
-        <span><strong>Location:</strong> <span id="loc"></span></span><br>
-        <span><strong>Organization:</strong> <span id="org"></span></span><br>
-        <span><strong>Timezone:</strong> <span id="timezone"></span></span>
-    </div>
-    <div class="text">بلغلط</div>
-      <div class="text">Hacked By #</div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discord.gg/127</title>
 
-    <script>
-         fetch('https://ipinfo.io/json')
-        .then(response => response.json())
-        .then(data => {
-            delete data.readme;
-            const infoDiv = document.getElementById('ip-info');
-            infoDiv.textContent = JSON.stringify(data, null, 2);
-        });
-    </script>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* خلفية */
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://media.discordapp.net/attachments/1454254125255753738/1456117213680504935/127.png?ex=69573255&is=6955e0d5&hm=205b25f01d61a11ea28ffa9c54934235481599204bb9dea8597b9c46372d1ad0&=&format=webp&quality=lossless&width=350&height=350') center center no-repeat;
+    background-size: cover;
+    filter: blur(8px) brightness(0.4);
+    z-index: -1;
+}
+
+/* اللوقو المربع */
+.logo {
+    width: 280px;
+    height: 280px;
+    background: url('https://cdn.discordapp.com/attachments/1455823962968953105/1456120957684154400/20ed421f0b13e8c2.png?ex=695735d1&is=6955e451&hm=dd9d604b0b4013ddb91422498be98f933d9ea1b5797d72a7549ee5c877214647') center center no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    border: 2px solid #575757;
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+/* معلومات IP */
+.info {
+    font-size: 1.2em;
+    color: #ff0000;
+    text-shadow: 0 0 10px #0000ff;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* النص */
+.text {
+    font-size: 2.5em;
+    color: #ff0000;
+    text-shadow: 0 0 15px #0000ff;
+    letter-spacing: 4px;
+    margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="logo"></div>
+
+<!-- YouTube Audio -->
+<iframe
+  width="0"
+  height="0"
+  src="https://www.youtube.com/embed/YOh5dUfv9iA?autoplay=1&loop=1&playlist=YOh5dUfv9iA"
+  frameborder="0"
+  allow="autoplay">
+</iframe>
+
+<div class="info">
+    IP: <span id="ip"></span><br>
+    City: <span id="city"></span><br>
+    Region: <span id="region"></span><br>
+    Country: <span id="country"></span><br>
+    Org: <span id="org"></span>
+</div>
+
+<div class="text">Discord.gg/127</div>
+<div class="text" style="font-size:1.5em;">Script By #</div>
+
+<script>
+fetch('https://ipinfo.io/json')
+.then(res => res.json())
+.then(data => {
+    document.getElementById('ip').textContent = data.ip || '-';
+    document.getElementById('city').textContent = data.city || '-';
+    document.getElementById('region').textContent = data.region || '-';
+    document.getElementById('country').textContent = data.country || '-';
+    document.getElementById('org').textContent = data.org || '-';
+});
+</script>
+
 </body>
 </html>
